@@ -46,7 +46,7 @@
 
 - (void)buttonClick:(UIButton *)button
 {
-    NSLog(@"按钮点击");
+    NSLog(@"按钮点击%@", button);
 }
 
 
