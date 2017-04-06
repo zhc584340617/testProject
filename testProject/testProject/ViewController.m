@@ -25,6 +25,12 @@
     [self.view addSubview:view];
     
     
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 25, 100, 50);
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"这是什么";
+    [view addSubview:label];
+    
 }
 
 
