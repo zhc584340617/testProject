@@ -39,7 +39,7 @@
     button.frame = CGRectMake(CGRectGetMinX(view.frame),
                               CGRectGetMaxY(view.frame) + 20,
                               CGRectGetWidth(view.frame),
-                              44);
+                              30);
     [self.view addSubview:button];
     
 }
