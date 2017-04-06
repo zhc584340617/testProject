@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) UIView *bottomView;
+
 @end
 
 @implementation ViewController
@@ -21,7 +23,7 @@
     // 添加一条注释
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    view.backgroundColor = [UIColor greenColor];
+    view.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:view];
     
     
@@ -42,11 +44,22 @@
                               30);
     [self.view addSubview:button];
     
+    UIView *bottonView = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                 CGRectGetMaxY(button.frame) + 20,
+                                                                 CGRectGetWidth(self.view.frame),
+                                                                 CGRectGetHeight(self.view.frame) - CGRectGetMaxY(button.frame) - 40)];
+    bottonView.backgroundColor = [UIColor orangeColor];
+    bottonView.hidden = YES;
+    [self.view addSubview:bottonView];
+    self.bottomView = bottonView;
+    
 }
 
 - (void)buttonClick:(UIButton *)button
 {
     NSLog(@"按钮点击%@", button);
+    self.bottomView.hidden = !self.bottomView.hidden;
+    
 }
 
 
