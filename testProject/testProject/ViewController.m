@@ -31,6 +31,22 @@
     label.text = @"这是什么";
     [view addSubview:label];
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = [UIColor redColor];
+    [button setTitle:@"按钮" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(CGRectGetMinX(view.frame),
+                              CGRectGetMaxY(view.frame) + 20,
+                              CGRectGetWidth(view.frame),
+                              44);
+    [self.view addSubview:button];
+    
+}
+
+- (void)buttonClick:(UIButton *)button
+{
+    NSLog(@"按钮点击");
 }
 
 
